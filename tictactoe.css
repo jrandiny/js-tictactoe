@@ -15,9 +15,45 @@ body{
   margin: 1%;
   border-radius: 10%;
   transition: background-color 0.1s linear;
+  font-size: 15vw;
+  position: relative;
 }
 
-.tile:hover{
+.tile.x{
+  background-color: var(--tile-X);
+}
+
+.tile.o{
+  background-color: var(--tile-O);
+}
+
+.tile::before{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5vw;
+  margin-top: -5vw;
+  width: 10vw;
+  height: 10vw;
+}
+
+.tile.x::before{
+  content:"";
+  background-image: url("X.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tile.o::before{
+  content:"";
+  background-image: url("O.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.tile.empty:hover{
   background-color: var(--tile-hover);
   transition: background-color 0.1s linear;
 }
