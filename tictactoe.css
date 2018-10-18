@@ -1,15 +1,31 @@
+:root {
+  --tile-base: #DDE392  ;
+  --tile-X:#EF3E36;
+  --tile-O:#008DD5;
+  --tile-hover:#595959;
+}
+
+body{
+  background-color: white ;
+}
+
 .tile{
-  background-color: black;
+  background-color: var(--tile-base);
   width: 31%;
   margin: 1%;
-  border-radius: 5%;
+  border-radius: 10%;
+  transition: background-color 0.1s linear;
+}
+
+.tile:hover{
+  background-color: var(--tile-hover);
+  transition: background-color 0.1s linear;
 }
 
 .board-row{
-  background-color: white;
   display: flex;
-  width: 300px;
-  height:100px;
+  width: 45vw;
+  height:15vw;
 }
 
 .container{
