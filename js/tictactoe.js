@@ -24,9 +24,9 @@ function evalWin(lastMove){
 
     if(menang){
       if(currentPlayer==1){
-        alert("win O");
+        openDialog("O menang");
       }else{
-        alert("win X");
+        openDialog("X menang");
       }
       playing = false;
     }
@@ -34,7 +34,7 @@ function evalWin(lastMove){
 
   if(playing){
     if(!board.includes(0)){
-      alert("draw");
+      openDialog("Seri")
       playing = false;
     }
   }
@@ -74,6 +74,18 @@ function initGame(){
       }
     },{once:true});
   }
+}
+
+function openDialog(text){
+  var modal = document.getElementById("modal-result");
+  var modalText = document.getElementById("modal-title")
+  modalText.innerHTML = text;
+  modal.className = "modal modal-open";
+}
+
+function closeDialog(){
+  var modal = document.getElementById("modal-result");
+  modal.className = "modal";
 }
 
 window.onload=function(){

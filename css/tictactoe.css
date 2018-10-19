@@ -3,10 +3,13 @@
   --tile-X:#EF3E36;
   --tile-O:#008DD5;
   --tile-hover:#595959;
+  --modal-color:#84f78d;
+  --modal-button-color:#FFFFFF;
 }
 
 body{
   background-color: white ;
+  font-family: 'Roboto', sans-serif;
 }
 
 .slider{
@@ -75,12 +78,12 @@ body{
 
 .tile.x::before{
   content:"";
-  background-image: url("X.svg");
+  background-image: url("../X.svg");
 }
 
 .tile.o::before{
   content:"";
-  background-image: url("O.svg");
+  background-image: url("../O.svg");
 }
 
 
@@ -109,11 +112,11 @@ body{
 }
 
 .bg-icon-O{
-  background-image: url("O.svg");
+  background-image: url("../O.svg");
 }
 
 .bg-icon-X{
-  background-image: url("X.svg");
+  background-image: url("../X.svg");
 }
 
 .bg-color-O{
@@ -124,7 +127,55 @@ body{
   background-color: var(--tile-X);
 }
 
-h1{
-  font-family: 'Roboto', sans-serif;
+.title{
   font-size: 3em;
+}
+
+.modal{
+  display: flex;
+  position: absolute;
+
+  width: 50vmin;
+  margin-left: -25vmin;
+  transform: translateY(-50%) scaleY(0);
+  min-height: 300px;
+
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  border-radius: calc(0.05*50vmin);
+
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  background-color: var(--modal-color);
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+.modal.modal-open{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-50%) scaleY(1);
+}
+
+.modal-title{
+  text-align: center;
+  margin: 0px;
+  font-size: 3em;
+}
+
+.modal-button{
+  background-color: var(--modal-button-color);
+  width:25%;
+  font-size: 2em;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
 }
