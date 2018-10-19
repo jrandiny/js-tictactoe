@@ -23,7 +23,11 @@ function evalWin(lastMove){
     menang = menang && (board[checkArray[cekGroup][1]]==board[checkArray[cekGroup][2]]);
 
     if(menang){
-      alert("win");
+      if(currentPlayer==1){
+        alert("win O");
+      }else{
+        alert("win X");
+      }
       playing = false;
     }
   }
@@ -56,11 +60,11 @@ function initGame(){
       if(playing){
         var loc = event.currentTarget.getAttribute("data-loc")-0;
         if(currentPlayer==1){
-          event.currentTarget.className = "tile x";
+          event.currentTarget.className = "tile x bg-color-X";
           board[loc]=1;
           currentPlayer = 2;
         }else{
-          event.currentTarget.className = "tile o";
+          event.currentTarget.className = "tile o bg-color-O";
           board[loc]=2;
           currentPlayer = 1;
         }

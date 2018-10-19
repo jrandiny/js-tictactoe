@@ -12,7 +12,7 @@ body{
 .slider{
   display: flex;
   flex-direction: row;
-  margin-bottom: 2vmin;
+  margin-bottom: 3vmin;
 }
 
 .slider-part{
@@ -50,14 +50,6 @@ body{
   background-size: cover;
 }
 
-.bgO{
-  background-image: url("O.svg");
-}
-
-.bgX{
-  background-image: url("X.svg");
-}
-
 .tile{
   background-color: var(--tile-base);
   width: 31%;
@@ -66,14 +58,6 @@ body{
   transition: background-color 0.1s linear;
   font-size: 15vmin;
   position: relative;
-}
-
-.tile.x{
-  background-color: var(--tile-X);
-}
-
-.tile.o{
-  background-color: var(--tile-O);
 }
 
 .tile::before{
@@ -122,6 +106,22 @@ body{
 
 .board{
   text-align: center;
+}
+
+.bg-icon-O{
+  background-image: url("O.svg");
+}
+
+.bg-icon-X{
+  background-image: url("X.svg");
+}
+
+.bg-color-O{
+  background-color: var(--tile-O);
+}
+
+.bg-color-X{
+  background-color: var(--tile-X);
 }
 
 h1{
