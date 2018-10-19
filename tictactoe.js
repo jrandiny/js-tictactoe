@@ -1,5 +1,6 @@
 var currentPlayer = 1;
 var board = [0,0,0,0,0,0,0,0,0];
+var playing = true;
 
 function initArray(location){
   var checkArray = [[0,4,8],[2,4,6]];
@@ -23,31 +24,54 @@ function evalWin(lastMove){
 
     if(menang){
       alert("win");
+      playing = false;
+    }
+  }
+
+  if(playing){
+    if(!board.includes(0)){
+      alert("draw");
+      playing = false;
     }
   }
 }
 
-function initClickHandler(){
+function updateTurnIndicator(){
+  if(currentPlayer==1){
+    document.getElementById("turnX").className="slider-part X turn";
+    document.getElementById("turnO").className="slider-part O";
+  }else{
+    document.getElementById("turnO").className="slider-part O turn";
+    document.getElementById("turnX").className="slider-part X";
+  }
+}
+
+function initGame(){
   var tiles = document.getElementsByClassName('tile');
+
+  updateTurnIndicator();
 
   for(var i = 0; i<tiles.length;i++){
     tiles[i].addEventListener("click", function(event){
-      var loc = event.currentTarget.getAttribute("data-loc")-0;
-      if(currentPlayer==1){
-        event.currentTarget.className = "tile x";
-        board[loc]=1;
-        currentPlayer = 2;
-      }else{
-        event.currentTarget.className = "tile o";
-        board[loc]=2;
-        currentPlayer = 1;
-      }
+      if(playing){
+        var loc = event.currentTarget.getAttribute("data-loc")-0;
+        if(currentPlayer==1){
+          event.currentTarget.className = "tile x";
+          board[loc]=1;
+          currentPlayer = 2;
+        }else{
+          event.currentTarget.className = "tile o";
+          board[loc]=2;
+          currentPlayer = 1;
+        }
 
-      evalWin(loc);
+        evalWin(loc);
+        updateTurnIndicator();
+      }
     },{once:true});
   }
 }
 
 window.onload=function(){
-  initClickHandler();
+  initGame();
 }
