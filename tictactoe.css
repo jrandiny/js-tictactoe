@@ -12,11 +12,12 @@ body{
 .slider{
   display: flex;
   flex-direction: row;
+  margin-bottom: 2vmin;
 }
 
 .slider-part{
-  width: 5vw;
-  height: 5vw;
+  width: 5vmin;
+  height: 5vmin;
   background-color: var(--tile-hover);
   display: flex;
   align-items: center;
@@ -63,7 +64,7 @@ body{
   margin: 1%;
   border-radius: 10%;
   transition: background-color 0.1s linear;
-  font-size: 15vw;
+  font-size: 15vmin;
   position: relative;
 }
 
@@ -80,10 +81,10 @@ body{
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -5vw;
-  margin-top: -5vw;
-  width: 10vw;
-  height: 10vw;
+  margin-left: -5vmin;
+  margin-top: -5vmin;
+  width: 10vmin;
+  height: 10vmin;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -106,8 +107,8 @@ body{
 
 .board-row{
   display: flex;
-  width: 45vw;
-  height:15vw;
+  width: 45vmin;
+  height:15vmin;
 }
 
 .container{
@@ -125,5 +126,5 @@ body{
 
 h1{
   font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
+  font-size: 3em;
 }
