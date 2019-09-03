@@ -145,7 +145,7 @@ body{
   top: 50%;
   left: 50%;
   box-sizing: border-box;
-  border-radius: calc(0.05*50vmin);
+  border-radius: calc(0.025*50vmin);
 
   align-items: center;
   justify-content: space-between;
@@ -180,6 +180,7 @@ body{
   text-align: center;
   border-radius: 10px;
   transition: background-color 0.1s ease-out;
+  cursor: pointer;
 }
 
 .modal-button:hover{
